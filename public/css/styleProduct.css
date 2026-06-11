@@ -1,0 +1,216 @@
+:root {
+    --tg-bg: var(--tg-theme-bg-color, #f8f9fa);
+    --tg-sec-bg: var(--tg-theme-secondary-bg-color, #ffffff);
+    --tg-text: var(--tg-theme-text-color, #2d3436);
+    --tg-btn: var(--tg-theme-button-color, #24b47e);
+    --tg-btn-text: var(--tg-theme-button-text-color, #ffffff);
+    --glass-border: rgba(127, 127, 127, 0.1);
+    --panel-bg: rgba(28, 28, 29, 0.95);
+}
+
+.product-main-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 15px 15px 120px;
+    box-sizing: border-box;
+}
+
+.product-top-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.product-gallery {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.main-image-view {
+    width: 100%;
+    min-height: 300px;
+    background: var(--tg-sec-bg);
+    border-radius: 15px;
+    border: 1px solid var(--glass-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.main-image-view img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.thumbnail-list {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    justify-content: center;
+    padding: 10px 0;
+    gap: 8px;
+    scrollbar-width: none;
+}
+
+.thumbnail-list::-webkit-scrollbar {
+    display: none;
+}
+
+.thumb-item {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    background: var(--tg-sec-bg);
+    border: 2px solid var(--glass-border);
+    border-radius: 8px;
+    opacity: 0.6;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+
+.thumb-item.active {
+    opacity: 1;
+    border-color: var(--tg-btn);
+    transform: scale(1.05);
+}
+
+.description-card {
+    background: var(--tg-sec-bg);
+    color: var(--tg-text);
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.product-bottom-section {
+    margin-top: 20px;
+}
+
+.product-header-title {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: normal;
+    white-space: normal; 
+    line-height: 1.2;
+    display: block;
+    width: 100%;
+}
+
+.price-buy-card {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 70px;
+    background: var(--panel-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    z-index: 9999;
+    border-top: 1px solid rgba(127, 127, 127, 0.2);
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.price-buy-content {
+    width: 100%;
+    max-width: 600px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.sidebar-back-btn {
+    width: 48px !important;
+    height: 48px !important;
+    min-width: 48px !important;
+    max-width: 48px !important;
+    aspect-ratio: 1 / 1 !important;
+    border-radius: 50% !important;
+    background: #ffffff !important;
+    color: #2d3436 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    text-decoration: none !important;
+    box-sizing: border-box !important;
+    padding: 0 !important;
+}
+
+.sidebar-back-btn svg {
+    width: 24px !important;
+    height: 24px !important;
+    flex-shrink: 0 !important;
+    margin: 0 !important;
+}
+
+.sidebar-back-btn:active {
+    opacity: 0.7;
+}
+
+.price-display {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 20px;
+}
+
+.price-tag {
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.main-buy-btn-green {
+    height: 48px;
+    width: 130px; 
+    padding: 0 10px;
+    border-radius: 14px;
+    background: var(--tg-btn);
+    color: var(--tg-btn-text);
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.1s, background-color 0.3s;
+    white-space: nowrap; 
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.main-buy-btn-green:active {
+    transform: scale(0.96);
+}
+
+.main-buy-btn-green.btn-disabled {
+    background: #444 !important;
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.btn-text, .discount-block {
+    display: none !important;
+}
+
+.description-content {
+    line-height: 1.5;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    word-wrap: break-word;   
+}
